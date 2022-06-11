@@ -1,0 +1,7 @@
+@import "_variables.scss";
+
+h1{
+    a{
+        color: map-get($map: $colors, $key: wine-color);
+    }
+}
