@@ -5,7 +5,13 @@ const leftBtn = document.querySelector('.left-btn');
 const rightBtn = document.querySelector('.right-btn');
 const grapesImg = document.querySelector('.grapes-img');
 const section3Wrapper = document.querySelector('.section-3-wrapper');
+const section1Wrapper = document.querySelector('.section-1-wrapper');
+const section5Wrapper = document.querySelector('.section-5-wrapper');
+const menu = document.querySelector('.menu');
+const navList = document.querySelector('.nav-list');
+const menuLines = document.querySelectorAll('.menu-line');
 
+section1Wrapper.style.transform = 'scale(1)';
 
 let counter1 = 0;
 let counter2 = 1;
@@ -35,6 +41,8 @@ const pageController = () => {
         });
         counter1 = 0;
         counter2 = 1; 
+        section1Wrapper.style.transform = 'scale(1)';
+        section5Wrapper.style.transform = 'scale(1.5)';
         progressCounter();
         bool = false;
     }
@@ -48,6 +56,8 @@ const pageController = () => {
         });
         counter1 = 4;
         counter2 = 5; 
+        section1Wrapper.style.transform = 'scale(1.5)';
+        section5Wrapper.style.transform = 'scale(1)';
         progressCounter();
         bool = false;
     }
@@ -70,8 +80,14 @@ window.addEventListener('wheel', (e) => {
     pageController();
     progressCounter();
 
-    bool && 
-        (document.querySelector(`.section-${e.deltaY > 0 ? counter1 : counter2}`).style.left = `${e.deltaY > 0 ? '-100vw' : '100vw'}`);
+    if(bool){
+        document.querySelector(`.section-${e.deltaY > 0 ? counter1 : counter2}`).style.left = `${e.deltaY > 0 ? '-100vw' : '0'}`;
+
+        document.querySelector(`.section-${e.deltaY > 0 ? counter1 : counter2}-wrapper`).style.transform = `scale(${e.deltaY > 0 ? "1.5" : "1"})`;
+
+        document.querySelector(`.section-${e.deltaY > 0 ? counter1 + 1 : counter2 + 1}-wrapper`).style.transform = `scale(${e.deltaY > 0 ? "1" : "1.5"})`;
+    }
+
 });
 
 //click events for arrow buttons
@@ -81,6 +97,11 @@ leftBtn.addEventListener('click', () => {
 
     pageController() && 
         (document.querySelector(`.section-${counter2}`).style.left = '0');
+
+    if(bool){
+        document.querySelector(`.section-${counter2}-wrapper`).style.transform = 'scale(1)';
+        document.querySelector(`.section-${counter2 + 1}-wrapper`).style.transform = 'scale(1.5)';
+    }
 });
 
 rightBtn.addEventListener('click', () => {
@@ -89,6 +110,11 @@ rightBtn.addEventListener('click', () => {
 
     pageController() && 
         (document.querySelector(`.section-${counter1}`).style.left = '-100vw');
+
+    if(bool){
+        document.querySelector(`.section-${counter2}-wrapper`).style.transform = 'scale(1)';
+        document.querySelector(`.section-${counter1}-wrapper`).style.transform = 'scale(1.5)';
+    }
 });
 
 //mouse over event on grapes images
@@ -99,4 +125,11 @@ grapesImg.addEventListener('mouseover', () => {
 //mouse out event on grapes images
 grapesImg.addEventListener('mouseout', () => {
     section3Wrapper.style.opacity = "1";
+});
+
+menu.addEventListener('click', (e) => {
+    navList.classList.toggle("change");
+    menuLines.forEach((menuLine) => {
+        menuLine.classList.toggle("change")
+    });
 });

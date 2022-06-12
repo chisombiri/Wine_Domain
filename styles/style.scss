@@ -13,8 +13,12 @@
 html{
     font-size: 62.5%;
 
-        @media (max-width: 1600px){
-            font-size: 50%;
+        @media (max-width: 1450px){
+            font-size: 52%;
+        }
+
+        @media (max-width: 500px){
+            font-size: 45%;
         }
 }
 
@@ -27,15 +31,80 @@ html{
     justify-content: space-evenly;
     align-items: center;
 
+    @media (max-width: 1000px){
+        justify-content: start;
+        padding-left: 3rem;
+    }
+
     .logo{
             .logo-img{
                 height: 6rem;
             }
     }
 
+    .menu{
+        display: none;
+
+        @media (max-width: 1000px){
+            position: absolute;
+            display: block;
+            width: 4rem;
+            height: 2.5rem;
+            top: 1.2rem;
+            right: 2.4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-line{
+            @media (max-width: 1000px){
+                width: 100%;
+                height: 0.3rem;
+                background-color: map-get($colors, wine-color);
+                transition: transform 0.6s;
+            }
+        }
+
+        .change.menu-line-1{
+            @media (max-width: 1000px){
+                transform: rotate(40deg) translate(.5rem, 1rem);
+            }
+        }
+    
+        .change.menu-line-2{
+            @media (max-width: 1000px){
+                transform: translate(-0.2rem, 2rem);
+            }
+        }
+    
+        .change.menu-line-3{
+            @media (max-width: 1000px){
+                transform: rotate(-40deg) translate(.5rem, -1rem);
+            }
+        }
+    }
+
     .nav-list{
         display: flex;
         justify-content: center;
+
+            @media (max-width: 1000px){
+                position: absolute; 
+                top: 5rem;
+                right: -21rem;
+                height: calc(100vh - 5rem);
+                flex-direction: column;
+                justify-content: start;
+                border-radius: 0.5rem 0 0 0;
+                padding: 2rem;
+                background-color: lighten(map-get($colors, black-color), 25%);
+                transition: right 0.6s;
+            }
+
+            @media (max-width: 500px){
+                top: 6.5rem;
+            }
 
             .nav-link{
                 position: relative;
@@ -52,6 +121,10 @@ html{
 
                     @media (max-width: 1200px){
                         margin: 0 1.5rem; 
+                    }
+
+                    @media (max-width: 1000px){
+                        margin: 1.5rem; 
                     }
 
                     &::before{
@@ -71,6 +144,10 @@ html{
                         left: 110%;
                     }
             }
+    }
+
+    .change.nav-list{
+        right: 0;
     }
 }
 
@@ -99,6 +176,14 @@ html{
     left: 4rem;
     animation: glow1 1s ease-in-out 2s 6;
 
+    @media (max-width: 800px){
+        left: 2rem;
+    }
+
+    @media (max-width: 500px){
+        left: 0.5rem;
+    }
+
         img{
             transform: rotate(-90deg);
         }
@@ -107,6 +192,14 @@ html{
 .right-btn{
     right: 4rem;
     animation: glow2 1s ease-in-out 2s 6;
+
+    @media (max-width: 800px){
+        right: 2rem;
+    }
+
+    @media (max-width: 500px){
+        right: 0.5rem;
+    }
 
         img{
             transform: rotate( 90deg);
@@ -146,6 +239,12 @@ html{
     z-index: 50;
     left: 4rem;
     bottom: 3rem;
+
+    @media (max-width: 800px){
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
         .progress{
             margin: 1rem 0;
@@ -199,6 +298,8 @@ html{
         .section-wrapper{
             width: inherit;
             height: inherit;
+            transform: scale(1.5);
+            transition: all 2s;
         }
 
         .section-1-wrapper{
@@ -229,6 +330,14 @@ html{
                         @media (max-width: 1200px){
                             font-size: 8rem;
                         }
+
+                        @media (max-width: 800px){
+                            font-size: 6rem;
+                        }
+
+                        @media (max-width: 600px){
+                            font-size: 4rem;
+                        }
                 }
         }
 
@@ -243,11 +352,19 @@ html{
             align-items: center;
             justify-content: space-evenly;
 
+                @media (max-width: 1000px){
+                    flex-direction: column;
+                }
+
                 .sale{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+
+                        @media (max-width: 1000px){
+                            order: 1;
+                        }
 
                         .sale-bag{
                             opacity: 0.9;
@@ -263,6 +380,14 @@ html{
 
                                 @media (max-width: 1200px){
                                     width: 25rem;
+                                }
+
+                                @media (max-width: 800px){
+                                    width: 20rem;
+                                }
+
+                                @media (max-width: 600px){
+                                    width: 15rem;
                                 }
                         }
 
@@ -283,6 +408,12 @@ html{
                                     width: 15rem;
                                     height: 4rem;
                                     font-size: 1.7rem;
+                                }
+
+                                @media (max-width: 600px){
+                                    width: 12rem;
+                                    height: 3rem;
+                                    font-size: 1.4rem;
                                 }
 
                                 &:hover{
@@ -306,6 +437,14 @@ html{
                         @media (max-width: 1200px){
                             width: 50rem;
                         }
+
+                        @media (max-width: 800px){
+                            width: 40rem;
+                        }
+
+                        @media (max-width: 600px){
+                            width: 30rem;
+                        }
                 }
         }
 
@@ -320,7 +459,6 @@ html{
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 1.5s;
 
                 .section-3-heading{
                     font-size: 20rem;
@@ -330,12 +468,41 @@ html{
                     text-align: center;
                     user-select: none;
                     text-shadow: 0.5rem 1.5rem map-get($colors, black-color);
+
+                        @media (max-width: 1000px){
+                            font-size: 12rem;
+                        }
+
+                        @media (max-width: 800px){
+                            font-size: 11rem;
+                            opacity: 0.7;
+                        }
+
+                        @media (max-width: 600px){
+                            font-size: 10rem;
+                        }
+
+                        @media (max-width: 500px){
+                            font-size: 8rem;
+                        }
                 }
 
                 .frame-img{
                     width: 100rem;
                     position: absolute;
                     opacity: 0.5;
+
+                        @media (max-width: 1000px){
+                            width: 70rem;
+                        }
+
+                        @media (max-width: 800px){
+                            width: 60rem;
+                        }
+
+                        @media (max-width: 600px){
+                            width: 35rem;
+                        }
                 }
 
                 .grapes-img{
@@ -347,6 +514,18 @@ html{
                         &:hover{
                             opacity: 1;
                             transform: scale(2);
+
+                            @media (max-width: 500px){
+                                transform: scale(1.5);
+                            }
+                        }
+
+                        @media (max-width: 1000px){
+                            width: 25rem;
+                        }
+
+                        @media (max-width: 500px){
+                            width: 15rem;
                         }
                 }
         }
@@ -378,6 +557,14 @@ html{
                     font-weight: 300;
                     text-align: center;
                     margin-bottom: 7rem;
+
+                        @media (max-width: 1000px){
+                            font-size: 8rem;
+                        }
+
+                        @media (max-width: 600px){
+                            font-size: 6rem;
+                        }
                 }
 
                 .new-wines-img{
@@ -385,6 +572,18 @@ html{
                     border: 0.1rem solid map-get($colors, white-color);
                     padding: 1rem;
                     opacity: 0.7;
+
+                        @media (max-width: 1000px){
+                            width: 60rem;
+                        }
+
+                        @media (max-width: 800px){
+                            width: 45rem;
+                        }
+
+                        @media (max-width: 600px){
+                            width: 35rem;
+                        }
                 }
         }
 
@@ -399,7 +598,17 @@ html{
             justify-content: center;
             align-items: center;
 
+                @media (max-width: 1000px){
+                    flex-direction: column;
+                }
+
                 .footer-list{
+
+                        @media (max-width: 1000px){
+                            width: 20rem;
+                            margin: 2rem auto;
+                        }
+
                         li{
                             font-size: 2.1rem;
                             font-weight: 700;
@@ -436,6 +645,11 @@ html{
                         @media (max-width: 1200px){
                             width: 25rem;
                             margin: 0 7rem;
+                        }
+
+                        @media (max-width: 1000px){
+                            width: 20rem;
+                            order: 1;
                         }
                 }
 
