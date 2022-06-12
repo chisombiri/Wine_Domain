@@ -1,7 +1,135 @@
 @import "_variables.scss";
 
-h1{
-    a{
-        color: map-get($map: $colors, $key: wine-color);
-    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Cormorant Garamond', serif;
 }
+
+html{
+    font-size: 62.5%;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+        section{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+
+        .section-3{
+            z-index: 10;
+        }
+
+        .section-wrapper{
+            width: inherit;
+            height: inherit;
+        }
+
+        .section-1-wrapper{
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(../images/section-1-bg.jpg) center no-repeat;
+            background-size: cover;
+
+                .section-1-heading-wrapper{
+                    position: absolute;
+                    top: 70%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .section-1-heading{
+                    font-size: 10rem;
+                    color: map-get($colors, white-color);
+                    font-weight: 300;
+                    text-transform: capitalize;
+                    letter-spacing: 0.1rem;
+                    border-bottom: 0.2rem solid map-get($colors, wine-color);
+                    user-select: none;
+                    text-align: right;
+                }
+        }
+
+        .section-2-wrapper{
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url(../images/section-2-bg.jpg) center no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+                .sale{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                        .sale-bag{
+                            opacity: 0.9;
+                            width: 45rem;
+                        }
+
+                        .sale-btn{
+                            width: 20rem;
+                            height: 5rem;
+                            font-size: 2rem;
+                            font-weight: 300;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1rem;
+                            margin-top: 4rem;
+                            border: 0.1rem solid map-get($colors, white-color);
+                            color: map-get($colors, white-color);
+                            background-color: transparent;
+                            transition: background-color 0.3s;
+
+                                &:hover{
+                                background-color: map-get($colors, wine-color);
+                                }
+                        }
+                }
+
+                .wine-bottle{
+                    opacity: 0.7;
+                    width: 80rem;
+                }
+        }
+
+        .section-3-wrapper{
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url(../images/section-3-bg.jpg) center no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+                .section-3-heading{
+                    font-size: 20rem;
+                    color: lighten(map-get($colors, black-color), 85%);
+                    text-transform: uppercase;
+                    transform: rotate(-20deg);
+                    text-align: center;
+                    user-select: none;
+                    text-shadow: 0.5rem 1.5rem map-get($colors, black-color);
+                }
+
+                .frame-img{
+                    width: 100rem;
+                    position: absolute;
+                    opacity: 0.5;
+                }
+
+                .grapes-img{
+                    width: 45rem;
+                    position: absolute;
+                    opacity: 0.6;
+                }
+        }
+}
+

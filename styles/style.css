@@ -1,4 +1,167 @@
-h1 a {
-  color: #b11226;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.wrapper .section-3 {
+  z-index: 10;
+}
+
+.wrapper .section-wrapper {
+  width: inherit;
+  height: inherit;
+}
+
+.wrapper .section-1-wrapper {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.6))), url(../images/section-1-bg.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(../images/section-1-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.wrapper .section-1-wrapper .section-1-heading-wrapper {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper .section-1-wrapper .section-1-heading {
+  font-size: 10rem;
+  color: #ffffff;
+  font-weight: 300;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  border-bottom: 0.2rem solid #b11226;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: right;
+}
+
+.wrapper .section-2-wrapper {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.9))), url(../images/section-2-bg.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url(../images/section-2-bg.jpg) center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.wrapper .section-2-wrapper .sale {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .section-2-wrapper .sale .sale-bag {
+  opacity: 0.9;
+  width: 45rem;
+}
+
+.wrapper .section-2-wrapper .sale .sale-btn {
+  width: 20rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 4rem;
+  border: 0.1rem solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.wrapper .section-2-wrapper .sale .sale-btn:hover {
+  background-color: #b11226;
+}
+
+.wrapper .section-2-wrapper .wine-bottle {
+  opacity: 0.7;
+  width: 80rem;
+}
+
+.wrapper .section-3-wrapper {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.9))), url(../images/section-3-bg.jpg) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(../images/section-3-bg.jpg) center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper .section-3-wrapper .section-3-heading {
+  font-size: 20rem;
+  color: #d9d9d9;
+  text-transform: uppercase;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-shadow: 0.5rem 1.5rem #000;
+}
+
+.wrapper .section-3-wrapper .frame-img {
+  width: 100rem;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.wrapper .section-3-wrapper .grapes-img {
+  width: 45rem;
+  position: absolute;
+  opacity: 0.6;
 }
 /*# sourceMappingURL=style.css.map */
