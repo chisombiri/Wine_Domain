@@ -174,7 +174,7 @@ html{
 
 .left-btn{
     left: 4rem;
-    animation: glow1 1s ease-in-out 2s 6;
+    animation: glow1 1s ease-in-out 2s 10;
 
     @media (max-width: 800px){
         left: 2rem;
@@ -191,7 +191,7 @@ html{
 
 .right-btn{
     right: 4rem;
-    animation: glow2 1s ease-in-out 2s 6;
+    animation: glow2 1s ease-in-out 2s 10;
 
     @media (max-width: 800px){
         right: 2rem;

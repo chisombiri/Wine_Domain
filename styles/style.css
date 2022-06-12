@@ -223,8 +223,8 @@ html {
 
 .left-btn {
   left: 4rem;
-  -webkit-animation: glow1 1s ease-in-out 2s 6;
-          animation: glow1 1s ease-in-out 2s 6;
+  -webkit-animation: glow1 1s ease-in-out 2s 10;
+          animation: glow1 1s ease-in-out 2s 10;
 }
 
 @media (max-width: 800px) {
@@ -246,8 +246,8 @@ html {
 
 .right-btn {
   right: 4rem;
-  -webkit-animation: glow2 1s ease-in-out 2s 6;
-          animation: glow2 1s ease-in-out 2s 6;
+  -webkit-animation: glow2 1s ease-in-out 2s 10;
+          animation: glow2 1s ease-in-out 2s 10;
 }
 
 @media (max-width: 800px) {
