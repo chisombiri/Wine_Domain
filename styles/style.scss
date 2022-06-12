@@ -12,6 +12,169 @@
 
 html{
     font-size: 62.5%;
+
+        @media (max-width: 1600px){
+            font-size: 50%;
+        }
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .logo{
+            .logo-img{
+                height: 6rem;
+            }
+    }
+
+    .nav-list{
+        display: flex;
+        justify-content: center;
+
+            .nav-link{
+                position: relative;
+                font-size: 1.6rem;
+                color: map-get($colors, white-color);
+                width: 15rem;
+                margin: 0 3rem;
+                text-transform: uppercase;
+                text-align: center;
+                border: 0.1rem solid map-get($colors, white-color);
+                padding: 0.4rem 0;
+                letter-spacing: 0.1rem;
+                overflow: hidden;
+
+                    @media (max-width: 1200px){
+                        margin: 0 1.5rem; 
+                    }
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        width: 150%;
+                        height: 5rem;
+                        background-color: map-get($colors, wine-color);
+                        left: -20%;
+                        transform-origin: left bottom;
+                        opacity: 0.8;
+                        transform: rotate(-40deg) translateX(-4rem);
+                        transition: left 0.4s;
+                    }
+
+                    &:hover::before{
+                        left: 110%;
+                    }
+            }
+    }
+}
+
+.page-btn{
+    position: fixed;
+    z-index: 50;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+
+        img{
+            width: 4rem;
+            opacity: 0.4;
+            cursor: pointer;
+            transition: opacity 0.3s;
+
+                &:hover{
+                    opacity: 0.9;
+                }
+        }
+}
+
+.left-btn{
+    left: 4rem;
+    animation: glow1 1s ease-in-out 2s 6;
+
+        img{
+            transform: rotate(-90deg);
+        }
+}
+
+.right-btn{
+    right: 4rem;
+    animation: glow2 1s ease-in-out 2s 6;
+
+        img{
+            transform: rotate( 90deg);
+        }
+}
+
+@keyframes glow1 {
+    0%{
+        box-shadow: none;
+    }
+
+    50%{
+        box-shadow: -1rem 1rem 2rem map-get($colors, wine-color);;
+    }
+
+    100%{
+        box-shadow: none;
+    }
+}
+
+@keyframes glow2 {
+    0%{
+        box-shadow: none;
+    }
+
+    50%{
+        box-shadow: 1rem 1rem 2rem map-get($colors, wine-color);;
+    }
+
+    100%{
+        box-shadow: none;
+    }
+}
+
+.progress-wrapper{
+    position: fixed;
+    z-index: 50;
+    left: 4rem;
+    bottom: 3rem;
+
+        .progress{
+            margin: 1rem 0;
+            text-align: center;
+
+                h2{
+                    font-size: 2.5rem;
+                    font-weight: 300;
+                    color: map-get($colors, white-color);
+                }
+        }
+
+        .circle-wrapper{
+            display: flex;
+
+                .circle{
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: 50%;
+                    margin: 0 0.3rem;
+                    border: 0.1rem solid map-get($colors, white-color);
+                    transition: background-color 0.3s;
+                }
+
+                .circle1{
+                    background-color: #ddd;
+                }
+        }
+
 }
 
 .wrapper{
@@ -25,10 +188,12 @@ html{
             height: 100%;
             position: absolute;
             left: 0;
+            overflow: hidden;
+            transition: left 1s;
         }
 
-        .section-3{
-            z-index: 10;
+        .section-1{
+            z-index: 20;
         }
 
         .section-wrapper{
@@ -45,6 +210,10 @@ html{
                     top: 70%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+
+                        @media (max-width: 1200px){
+                            width: 80%; 
+                        }
                 }
 
                 .section-1-heading{
@@ -56,7 +225,15 @@ html{
                     border-bottom: 0.2rem solid map-get($colors, wine-color);
                     user-select: none;
                     text-align: right;
+
+                        @media (max-width: 1200px){
+                            font-size: 8rem;
+                        }
                 }
+        }
+
+        .section-2{
+            z-index: 18;
         }
 
         .section-2-wrapper{
@@ -75,6 +252,18 @@ html{
                         .sale-bag{
                             opacity: 0.9;
                             width: 45rem;
+
+                                @media (max-width: 1600px){
+                                    width: 35rem;
+                                }
+
+                                @media (max-width: 1300px){
+                                    width: 30rem;
+                                }
+
+                                @media (max-width: 1200px){
+                                    width: 25rem;
+                                }
                         }
 
                         .sale-btn{
@@ -90,6 +279,12 @@ html{
                             background-color: transparent;
                             transition: background-color 0.3s;
 
+                                @media (max-width: 1200px){
+                                    width: 15rem;
+                                    height: 4rem;
+                                    font-size: 1.7rem;
+                                }
+
                                 &:hover{
                                 background-color: map-get($colors, wine-color);
                                 }
@@ -99,7 +294,24 @@ html{
                 .wine-bottle{
                     opacity: 0.7;
                     width: 80rem;
+
+                        @media (max-width: 1600px){
+                            width: 65rem;        
+                        }
+
+                        @media (max-width: 1300px){
+                            width: 60rem;        
+                        }
+
+                        @media (max-width: 1200px){
+                            width: 50rem;
+                        }
                 }
+        }
+
+        .section-3{
+            z-index: 16;
+            background-color: map-get($colors, black-color);
         }
 
         .section-3-wrapper{
@@ -108,6 +320,7 @@ html{
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: opacity 1.5s;
 
                 .section-3-heading{
                     font-size: 20rem;
@@ -129,7 +342,113 @@ html{
                     width: 45rem;
                     position: absolute;
                     opacity: 0.6;
+                    transition: all 1.5s;
+
+                        &:hover{
+                            opacity: 1;
+                            transform: scale(2);
+                        }
                 }
+        }
+
+        .section-4{
+            z-index: 14;
+        }
+
+        .section-4-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+                .section-4-bg{
+                    width: 110%;
+                    height: 110%;
+                    z-index: -2;
+                    position: absolute;
+                    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url(../images/section-4-bg.jpg) center no-repeat;
+                    background-size: cover;
+                    filter: blur(0.5rem);
+                }
+
+                .section-4-heading{
+                    user-select: none;
+                    color: map-get($colors, wine-color);
+                    font-size: 10rem;
+                    font-weight: 300;
+                    text-align: center;
+                    margin-bottom: 7rem;
+                }
+
+                .new-wines-img{
+                    width: 70rem;
+                    border: 0.1rem solid map-get($colors, white-color);
+                    padding: 1rem;
+                    opacity: 0.7;
+                }
+        }
+
+        .section-5{
+            z-index: 12;
+        }
+
+        .section-5-wrapper{
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url(../images/section-5-bg.jpg) center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+                .footer-list{
+                        li{
+                            font-size: 2.1rem;
+                            font-weight: 700;
+                            letter-spacing: 0.1rem;
+                            color: lighten(map-get($colors, black-color), 85%);
+                            margin: 1rem 0;
+
+                                &:first-child{
+                                    text-transform: uppercase;
+                                    color: map-get($colors, white-color);
+                                }
+
+                                a{
+                                    color: inherit;
+                                }
+                        }
+                }
+
+                .footer-img{
+                    width: 60rem;
+                    margin: 0 20rem;
+                    opacity: 0.85;
+
+                        @media (max-width: 1600px){
+                            width: 45rem; 
+                            margin: 0 12rem; 
+                        }
+
+                        @media (max-width: 1300px){
+                            width: 35rem; 
+                            margin: 0 10rem; 
+                        }
+
+                        @media (max-width: 1200px){
+                            width: 25rem;
+                            margin: 0 7rem;
+                        }
+                }
+
+                .copyright{
+                    position: absolute;
+                    bottom: 2.4rem;
+                    font-weight: 600;
+                    text-align: center;
+                    color: lighten(map-get($colors, black-color), 90%);
+                    letter-spacing: 0.2rem;
+                    font-size: 2.1rem;
+                }
+
         }
 }
 
